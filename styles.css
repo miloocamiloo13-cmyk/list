@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1a001f, #3b0a45, #6a0dad);
+  color: #f8eaff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  text-align: center;
+  padding: 40px 20px;
+  backdrop-filter: blur(10px);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #f3c4ff;
+  text-shadow: 0 0 15px rgba(255, 200, 255, 0.6);
+}
+main {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(200, 100, 255, 0.2);
+  backdrop-filter: blur(15px);
+  animation: aparecer 1.5s ease;
+}
+p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  transition: transform 0.3s, color 0.3s;
+}
+p:hover {
+  transform: scale(1.02);
+  color: #ffd6ff;
+}
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+h3 {
+  font-weight: normal;
+  color: #e7b3ff;
+}
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moverFondo 20s linear infinite;
+  z-index: -1;
+}
+@keyframes moverFondo {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-200px, -200px);
+  }
+}
